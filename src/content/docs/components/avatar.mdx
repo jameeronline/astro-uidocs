@@ -1,0 +1,107 @@
+---
+title: Avatar
+---
+
+import { Card } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+The **Avatar** component is used to display a user's profile image, initials,
+or icon. It helps visually represent users or entities in your application,
+often appearing in lists, headers, or profile sections.
+
+This is a styled paragraph.
+::p.text-lg.text-gray-700.mb-4
+This paragraph uses Tailwind styles via a directive!
+::
+
+<Card title="">
+
+  <a
+    href="#"
+    class="relative inline-flex items-center justify-center w-12 h-12 text-lg text-white rounded bg-blue-500"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="1.5"
+      aria-labelledby="title description"
+      role="graphics-symbol"
+    >
+      <title id="title">User Icon</title>
+      <desc id="description">
+        User icon associated with a particular user account
+      </desc>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      />
+    </svg>
+  </a>
+</Card>
+
+<Tabs>
+  <TabItem label="HTML">
+  ```html
+    <a
+      href="#"
+      class="relative inline-flex items-center justify-center w-12 h-12 text-lg text-white rounded bg-emerald-500"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-labelledby="title description"
+        role="graphics-symbol"
+      >
+        <title id="title">User Icon</title>
+        <desc id="description">
+          User icon associated with a particular user account
+        </desc>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        />
+      </svg>
+    </a>
+    ```
+  </TabItem>
+  <TabItem label="CSS">
+  ```css
+    .avatar {
+      @apply relative inline-flex items-center justify-center w-12 h-12 text-lg text-white rounded bg-emerald-500;
+    }
+    .avatar svg {
+      @apply w-6 h-6;
+    }
+    ```
+  </TabItem>
+  <TabItem label="JS">
+    ```javascript
+    // Example of how you might use the Avatar component in JavaScript
+    const avatarElement = document.createElement('a');
+    avatarElement.href = '#';
+    avatarElement.className = 'relative inline-flex items-center justify-center w-12 h-12 text-lg text-white rounded bg-emerald-500';
+    ```
+  </TabItem>
+</Tabs>
+
+Below is a preview of the Avatar component in use:
+
+### Variations
+
+<Aside>
+  <p>
+    The Avatar component can be customized with different sizes, colors, and
+    shapes to fit your design needs. You can also use it to display user
+    initials or icons instead of images.
+  </p>
+</Aside>

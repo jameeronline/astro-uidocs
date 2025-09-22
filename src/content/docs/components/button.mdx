@@ -1,0 +1,98 @@
+---
+title: Button
+description: The Button component is a reusable UI element that allows users to perform actions or trigger events in your application. It supports various styles, sizes, and states to fit different use cases.
+lastUpdated: 2022-08-09
+---
+
+import LeadingText from '../../../components/LeadingText.astro';
+import ComponentPreview from '../../../components/ComponentPreview.jsx';
+
+<LeadingText>
+The Button component is a reusable UI element that allows users to perform actions or trigger events in your application. It supports various styles, sizes, and states to fit different use cases.
+</LeadingText>
+
+<ComponentPreview client:load />
+
+## Description
+
+Buttons are essential interactive elements in user interfaces. They can be used for form submissions, navigation, or any action that requires user interaction.
+
+## Usage
+
+```html live
+<button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+  <span>Large button</span>
+</button>
+```
+
+## Props
+
+| Prop      | Type      | Default   | Options                          | Description                          |
+|-----------|-----------|-----------|----------------------------------|--------------------------------------|
+| `variant` | string    | `primary` | `primary`, `secondary`, `tertiary` | Visual style of the button           |
+| `size`    | string    | `md`      | `sm`, `md`, `lg`                 | Size of the button                   |
+| `disabled`| boolean   | `false`   | `true`, `false`                  | Disables the button if `true`        |
+| `onClick` | function  |           |                                  | Callback when button is clicked      |
+
+## Examples
+
+### Primary Button
+
+```html live 
+<button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+  <span>Large button</span>
+</button>
+```
+
+### Secondary Button
+
+```html live
+<button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-100 disabled:text-emerald-400 disabled:shadow-none">
+  <span>Large button</span>
+</button>
+```
+
+### Disabled Button
+
+```jsx
+<Button disabled>Disabled</Button>
+```
+
+## Dos and Don'ts
+
+### ✅ Do
+
+* Use clear, action-oriented labels like "Save", "Submit", or "Download"
+* Maintain consistent button sizing throughout your application
+* Provide visual feedback on hover and focus states
+* Use primary buttons for the main action and secondary for less important actions
+* Place buttons in logical, expected locations (e.g., bottom-right for forms)
+* Ensure sufficient spacing between multiple buttons
+* Use appropriate button variants to establish visual hierarchy
+* Include icons when they enhance understanding of the action
+* Make buttons large enough for easy touch interaction (minimum 44px)
+
+### ❌ Don't
+
+- Use vague labels like "Click here" or "Button"
+- Create buttons that are too small to interact with comfortably
+- Use too many primary buttons on the same page or section
+- Place destructive actions (like "Delete") next to primary actions without visual distinction
+- Use buttons for navigation when links would be more appropriate
+- Make buttons look like other UI elements (links, text, etc.)
+- Use all caps for button text as it reduces readability
+- Forget to include disabled states for non-interactive buttons
+- Use colors that don't meet accessibility contrast requirements
+- Stack too many buttons vertically without proper spacing
+
+## Accessibility
+
+- Use clear and descriptive labels.
+- Ensure sufficient color contrast.
+- Use the `disabled` prop to indicate non-interactive buttons.
+
+## Related Components
+
+- [IconButton](./icon-button)
+- [LinkButton](./link-button)
+- [ButtonGroup](./button-group)
