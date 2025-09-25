@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import remarkDirective from "remark-directive";
+import { fileURLToPath, URL } from 'node:url';
 
 import mdx from "@astrojs/mdx";
 
@@ -17,7 +18,8 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkDirective],
   },
-  integrations: [starlight({
+  integrations: [
+    starlight({
     title: "Park UI",
     // logo:{
     //   src: "./src/assets/logo.svg",
@@ -110,12 +112,21 @@ export default defineConfig({
         autogenerate: { directory: "reference" },
       },
     ],
-  }), mdx(), liveCode({
+  }), 
+  mdx(), 
+  liveCode({
     defaultProps: {
       theme: 'light',
     }
-  }), react()],
+  }), 
+  react()],
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
   },
 });

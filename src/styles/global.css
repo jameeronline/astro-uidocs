@@ -1,11 +1,16 @@
 @layer base, starlight, theme, components, utilities;
 
+
 @import "@astrojs/starlight-tailwind";
 @import "@fontsource-variable/ibm-plex-sans";
 /* @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities); */
 
 @import "tailwindcss";
+
+/* dark theme */
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 /* Dark mode colors. */
 :root {
@@ -38,4 +43,14 @@
   --sl-color-gray-7: #f4f7f3;
   --sl-color-black: #ffffff;
    /* --sl-content-width: 58rem; */
+}
+
+@layer base{
+  .sl-markdown-content :is(ul, ol) {
+    list-style: inside;
+  }
+
+  .example-container {
+    @apply p-4 bg-gray-50 dark:bg-gray-800;
+  }
 }

@@ -8,6 +8,17 @@
     "dist"
   ],
   "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@components": [
+        "./src/components"
+      ]
+    },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }

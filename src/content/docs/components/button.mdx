@@ -4,18 +4,82 @@ description: The Button component is a reusable UI element that allows users to 
 lastUpdated: 2022-08-09
 ---
 
-import LeadingText from '../../../components/LeadingText.astro';
-import ComponentPreview from '../../../components/ComponentPreview.jsx';
+import { LeadingText, CodePreview } from '@components';
+import { Tabs, TabItem, Code } from '@astrojs/starlight/components';
+
+export const htmlCode = `<div class="call-to-action">
+    <h2 class="call-to-action__title">
+        Transform Your Online Presence
+    </h2>
+    <div class="call-to-action__caption">
+        <p class="call-to-action__description">
+            Let us build a stunning, high-performing website tailored to your needs.
+        </p>
+        <div class="call-to-action__btns">
+            <a href="#" class="btn btn--primary btn--lg btn--primary-shadow">Get a Quote</a>
+            <a href="#" class="btn btn--outline-primary btn--lg">Consult Now</a>
+        </div>
+    </div>
+</div>`;
+
+export const cssCode = `
+@use 'sprucecss/scss/spruce' as *;
+
+.call-to-action {
+  border-block-start: 1px solid color('border');
+  display: flex;
+  flex-direction: column;
+  gap: spacer('s') spacer-clamp('m', 'l');
+  padding-block: spacer-clamp('l', 'xl');
+
+  @include breakpoint('md') {
+    flex-direction: row;
+  }
+
+  &__title {
+    font-size: font-size('h1');
+    font-weight: 400;
+    margin-block: 0;
+  }
+
+  &__caption {
+    @include layout-stack('m');
+  }
+
+  &__description {
+    font-size: config('font-size-lead', $typography);
+  }
+
+  &__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('m');
+  }
+}
+`;
+
+export const jsCode = `document.addEventListener('DOMContentLoaded', function() {
+  console.log('JavaScript is working!');
+});`;
 
 <LeadingText>
-The Button component is a reusable UI element that allows users to perform actions or trigger events in your application. It supports various styles, sizes, and states to fit different use cases.
+  The Button component is a reusable UI element that allows users to perform actions or trigger events in your application. It supports various styles, sizes, and states to fit different use cases.
 </LeadingText>
 
-<ComponentPreview client:load />
+<CodePreview client:load title="Button Component Example" htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} />
 
 ## Description
 
 Buttons are essential interactive elements in user interfaces. They can be used for form submissions, navigation, or any action that requires user interaction.
+
+<Tabs>
+  <TabItem label="HTML">
+  <Code lang="html" code={htmlCode}>
+</Code>
+  </TabItem>
+  <TabItem label="CSS">Io, Europa, Ganymede</TabItem>
+  <TabItem label="JS">Callisto, Titan, Triton</TabItem>
+</Tabs>
 
 ## Usage
 
@@ -38,7 +102,7 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 ### Primary Button
 
-```html live 
+```html live title="Primary Button"
 <button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
   <span>Large button</span>
 </button>
@@ -46,7 +110,7 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 ### Secondary Button
 
-```html live
+```html live title="Secondary Button"
 <button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-100 disabled:text-emerald-400 disabled:shadow-none">
   <span>Large button</span>
 </button>
@@ -54,8 +118,10 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 ### Disabled Button
 
-```jsx
-<Button disabled>Disabled</Button>
+```html live title="Disabled Button"
+<button disabled class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-100 disabled:text-emerald-400 disabled:shadow-none">
+  <span>Large button</span>
+</button>
 ```
 
 ## Dos and Don'ts
