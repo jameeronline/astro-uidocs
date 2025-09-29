@@ -1,0 +1,190 @@
+---
+// src/layouts/CustomHome.astro
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Park UI Design System</title>
+  <!-- Import Starlight CSS -->
+  <style is:global>
+    @import '@astrojs/starlight/style/props.css';
+    @import '@astrojs/starlight/style/reset.css';
+    @import '@astrojs/starlight/style/util.css';
+  </style>
+</head>
+<body>
+  <div class="custom-home">
+    <!-- Custom Hero Section with Starlight styling -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-title-gradient">Park UI</span>
+          Design System
+        </h1>
+        <p class="hero-description">
+          A comprehensive collection of components built with Wickedblocks & Tailwind CSS. 
+          Copy and paste beautiful, accessible components directly into your projects.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="/getting-started/installation/" class="hero-button hero-button-primary">
+            Get Started
+          </a>
+          <a href="/components/button/" class="hero-button hero-button-secondary">
+            View Components
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Beautiful Design</h3>
+          <p>Carefully crafted components with attention to detail and modern aesthetics.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Optimized for performance with minimal bundle size and fast loading times.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">♿</div>
+          <h3>Accessible</h3>
+          <p>Built with accessibility in mind, following WCAG guidelines and best practices.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
+<style>
+  /* Inherit Starlight's CSS variables and styling */
+  .hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: linear-gradient(
+      135deg,
+      var(--sl-color-bg-nav) 0%,
+      var(--sl-color-bg-sidebar) 50%,
+      var(--sl-color-bg-nav) 100%
+    );
+  }
+
+  .hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--sl-color-white);
+  }
+
+  .hero-title-gradient {
+    background: linear-gradient(135deg, var(--sl-color-accent), var(--sl-color-accent-high));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--sl-color-gray-2);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .hero-button-primary {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-accent-text);
+  }
+
+  .hero-button-primary:hover {
+    background: var(--sl-color-accent-high);
+    transform: translateY(-1px);
+  }
+
+  .hero-button-secondary {
+    background: transparent;
+    color: var(--sl-color-white);
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  .hero-button-secondary:hover {
+    background: var(--sl-color-gray-6);
+    border-color: var(--sl-color-accent);
+  }
+
+  .features {
+    padding: 4rem 0;
+    background: var(--sl-color-bg);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-gray-5);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--sl-color-accent);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    color: var(--sl-color-white);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .feature-card p {
+    color: var(--sl-color-gray-2);
+    line-height: 1.6;
+  }
+</style>

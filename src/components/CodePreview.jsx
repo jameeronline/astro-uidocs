@@ -1,14 +1,20 @@
-'use client'; // Required for client-side rendering in Astro
-
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+//import { atom, atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+//import atom from 'react-syntax-highlighter/dist/esm/styles/prism';
+//import atomDark from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { default as oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism/one-light';
+import { default as oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism/one-dark';
+
+
+//components
+import { Switch } from '@headlessui/react'
 
 const CodePreview = ({ children, title = "Component Preview", htmlCode, cssCode, jsCode }) => {    
     const [tab, setTab] = useState("Preview");
     const [dir, setDir] = useState("ltr");
     const [theme, setTheme] = useState("light");
     const [copied, setCopied] = useState("");
-
 
     const copyToClipboard = async (code, type) => {
         try {
@@ -55,25 +61,23 @@ const CodePreview = ({ children, title = "Component Preview", htmlCode, cssCode,
 
                     {tab === "Preview" && (
                         <>
-                            <a
-                                onClick={() => setDir(dir === "ltr" ? "rtl" : "ltr")}
-                                className={`px-2 py-1 text-sm text-gray-900 bg-gray-100 rounded hover:bg-gray-200 transition ml-auto ${
-                                    dir === "rtl" ? "bg-green-600 text-white hover:bg-green-700" : ""
-                                }`}
-                                type="button"
-                            >
-                                {dir === "rtl" ? "RTL" : "LTR"}
-                            </a>
-                            <a
-                                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                                
-                                className={`px-2 py-1 text-gray-900 text-sm bg-gray-100 rounded hover:bg-gray-200 transition ${
-                                    theme === "dark" ? "bg-green-600 text-white hover:bg-green-700" : ""
-                                }`}
-                                type="button"
-                            >
-                                {theme === "dark" ? "Dark" : "Light"}
-                            </a>
+                            
+                                <Switch
+                                    checked={dir === "rtl" ? true : false}
+                                    onChange={() => setDir(dir === "ltr" ? "rtl" : "ltr")}
+                                    className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-checked:bg-green-600"
+                                >
+                                    <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-checked:translate-x-6" />
+                                </Switch>
+                                <span>{dir === "rtl" ? "RTL" : "LTR"}</span>
+                                <Switch
+                                    checked={theme === "dark" ? true : false}
+                                    onChange={() => setTheme(theme === "light" ? "dark" : "light")}
+                                    className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-checked:bg-green-600"
+                                >
+                                    <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-checked:translate-x-6" />
+                                </Switch>
+                                <span>{theme === "dark" ? "Dark" : "Light"}</span>
                         </>
                     )}
 
@@ -114,7 +118,10 @@ const CodePreview = ({ children, title = "Component Preview", htmlCode, cssCode,
                 {tab === "HTML" && (
                     <div className="relative">
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="html"
+                            style={theme === "dark" ? oneDark : oneLight}
+                            showLineNumbers={true}
+                            customStyle={{ margin: 0, borderRadius: '0.5rem' }}
                         >
                             {htmlCode}
                         </SyntaxHighlighter>
@@ -124,6 +131,10 @@ const CodePreview = ({ children, title = "Component Preview", htmlCode, cssCode,
                     <div className="relative">
                         <SyntaxHighlighter 
                             language="css" 
+
+                            style={theme === "dark" ? oneDark : oneLight}
+                            showLineNumbers={true}
+                            customStyle={{ margin: 0, borderRadius: '0.5rem' }}
                         >
                             {cssCode}
                         </SyntaxHighlighter>
@@ -133,6 +144,10 @@ const CodePreview = ({ children, title = "Component Preview", htmlCode, cssCode,
                     <div className="relative">
                         <SyntaxHighlighter 
                             language="jsx" 
+
+                            style={theme === "dark" ? oneDark : oneLight}
+                            showLineNumbers={true}
+                            customStyle={{ margin: 0, borderRadius: '0.5rem' }}
                         >
                             {jsCode}
                         </SyntaxHighlighter>

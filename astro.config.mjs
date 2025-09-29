@@ -1,17 +1,16 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import starlight from "@astrojs/starlight";
-import remarkDirective from "remark-directive";
 import { fileURLToPath, URL } from 'node:url';
 
-import mdx from "@astrojs/mdx";
+import starlight from "@astrojs/starlight";
+import remarkDirective from "remark-directive";
 
+import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 
 //plugins
 import liveCode from 'astro-live-code'
-
-import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,7 +34,7 @@ export default defineConfig({
     expressiveCode: {
       // Replace the default themes with a custom set of bundled themes:
       // "dracula" (a dark theme) and "solarized-light"
-      themes: ["github-dark", "monokai"],
+      themes: ["github-light", "monokai"],
     },
     social: [
       {
@@ -66,11 +65,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        label: "Guides",
-        items: [
-          // Each item here is one entry in the navigation menu.
-          { label: "Example Guide", slug: "guides/example" },
-        ],
+        label: "Introduction", slug: "introduction",
       },
       {
         label: "Getting Started",
@@ -82,11 +77,21 @@ export default defineConfig({
       {
         label: "StyleGuide",
         items: [
+          { label: "Introduction", slug: "style-guide/introduction" },
           { label: "Colors", slug: "style-guide/colors" },
           { label: "Typography", slug: "style-guide/typography" },
           { label: "Spacing", slug: "style-guide/spacing" },
+          { label: "Layout", slug: "style-guide/layout" },
+          { label: "Icons", slug: "style-guide/icons" },
           { label: "Utilities", slug: "style-guide/utilities" },
           { label: "Assets", slug: "style-guide/assets" },
+          {
+            label: "Design Tokens",
+            items: [
+              { label: "Colors", slug: "style-guide/design-tokens/colors" },
+              { label: "Typography", slug: "style-guide/design-tokens/typography" },
+            ]
+          }
         ],
       },
       {
@@ -94,29 +99,75 @@ export default defineConfig({
         items: [
           { label: "Accordion", slug: "components/accordion" },
           { label: "Avatar", slug: "components/avatar" },
-          { label: "Button", slug: "components/button" },
+          { label: "Button", slug: "components/button", badge: { text: 'New', variant: 'note' } },
           { label: "Card", slug: "components/card" },
+          
         ],
       },
+      { label: "Form Elements", autogenerate: { directory: 'form-elements' } },
       {
         label: "Blocks/Patterns",
         items: [
-          { label: "Hero", slug: "patterns/hero" },
-          { label: "SignUp", slug: "patterns/auth/signup-form" },
-          { label: "Login", slug: "patterns/auth/login-form" },
-          { label: "Forget Password", slug: "patterns/auth/forget-password" },
-        ],
+          { label: "Authentication", autogenerate: { directory: 'patterns/auth' }, },
+        ]
       },
       {
         label: "Reference",
         autogenerate: { directory: "reference" },
       },
+      {
+        label: "Resources",
+        collapsed: false,
+        items: [
+          { 
+            label: "🎨 Design Tools", 
+            link: "https://www.figma.com/",
+            attrs: { target: "_blank", rel: "noopener" }
+          },
+          { 
+            label: "🚀 Deployment", 
+            link: "https://vercel.com/",
+            attrs: { target: "_blank", rel: "noopener" }
+          },
+          { 
+            label: "📚 Learn More", 
+            link: "https://developer.mozilla.org/",
+            attrs: { target: "_blank", rel: "noopener" }
+          }
+        ],
+      },
+      {
+        label: "External Links",
+        collapsed: true,
+        items: [
+          { 
+            label: "Tailwind CSS", 
+            link: "https://tailwindcss.com/",
+            attrs: { target: "_blank", rel: "noopener" }
+          },
+          { 
+            label: "Design System", 
+            link: "https://design-system.com/",
+            attrs: { target: "_blank", rel: "noopener" }
+          },
+          { 
+            label: "Astro Documentation", 
+            link: "https://docs.astro.build/",
+            attrs: { target: "_blank", rel: "noopener" }
+          },
+          { 
+            label: "Starlight Guide", 
+            link: "https://starlight.astro.build/",
+            attrs: { target: "_blank", rel: "noopener" }
+          }
+        ],
+      }
     ],
   }), 
   mdx(), 
   liveCode({
     defaultProps: {
-      theme: 'light',
+      theme: 'dark',
     }
   }), 
   react()],

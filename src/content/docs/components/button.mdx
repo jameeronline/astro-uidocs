@@ -1,7 +1,6 @@
 ---
 title: Button
 description: The Button component is a reusable UI element that allows users to perform actions or trigger events in your application. It supports various styles, sizes, and states to fit different use cases.
-lastUpdated: 2022-08-09
 ---
 
 import { LeadingText, CodePreview } from '@components';
@@ -66,7 +65,7 @@ export const jsCode = `document.addEventListener('DOMContentLoaded', function() 
   The Button component is a reusable UI element that allows users to perform actions or trigger events in your application. It supports various styles, sizes, and states to fit different use cases.
 </LeadingText>
 
-<CodePreview client:load title="Button Component Example" htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} />
+<CodePreview client:visible title="" htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode} />
 
 ## Description
 
@@ -74,11 +73,14 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 <Tabs>
   <TabItem label="HTML">
-  <Code lang="html" code={htmlCode}>
-</Code>
+  <Code lang="html" code={htmlCode} />
   </TabItem>
-  <TabItem label="CSS">Io, Europa, Ganymede</TabItem>
-  <TabItem label="JS">Callisto, Titan, Triton</TabItem>
+  <TabItem label="CSS">
+  <Code lang="css" code={cssCode} />
+  </TabItem>
+  <TabItem label="JS">
+  <Code lang="javascript" code={jsCode} />
+  </TabItem>
 </Tabs>
 
 ## Usage
@@ -102,7 +104,7 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 ### Primary Button
 
-```html live title="Primary Button"
+```html live
 <button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
   <span>Large button</span>
 </button>
@@ -110,7 +112,7 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 ### Secondary Button
 
-```html live title="Secondary Button"
+```html live
 <button class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-100 disabled:text-emerald-400 disabled:shadow-none">
   <span>Large button</span>
 </button>
@@ -118,7 +120,7 @@ Buttons are essential interactive elements in user interfaces. They can be used 
 
 ### Disabled Button
 
-```html live title="Disabled Button"
+```html live
 <button disabled class="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap bg-emerald-50 text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-100 disabled:text-emerald-400 disabled:shadow-none">
   <span>Large button</span>
 </button>

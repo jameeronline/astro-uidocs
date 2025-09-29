@@ -1,0 +1,20 @@
+---
+import LeadingText from '@components/LeadingText.astro';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage frontmatter={{ title: "About Us", description: "Learn more about our team and mission." }}>
+    <LeadingText>Welcome to our website! We are dedicated to providing the best service possible.</LeadingText>
+      <h2>Our Team</h2>
+      <p>
+        Our team consists of passionate professionals committed to delivering high-quality solutions and exceptional user experiences. We value collaboration, innovation, and continuous improvement.
+      </p>
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to empower users through intuitive interfaces and reliable documentation. We strive to make complex concepts accessible and easy to understand for everyone.
+      </p>
+      <h2>UI Documentation</h2>
+      <p>
+        This page provides comprehensive information about our user interface components, design principles, and usage guidelines. Explore the documentation to learn how to integrate and customize UI elements for your project.
+      </p>
+</StarlightPage>

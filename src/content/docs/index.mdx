@@ -1,261 +1,98 @@
 ---
-title: "Home"
-description: Get started building your docs site with Starlight.
+title: "Park UI Design System"
+description: "A comprehensive collection of components built with Wickedblocks & Tailwind CSS. Copy and paste beautiful, accessible components directly into your projects."
 template: splash
-
+hero:
+  tagline: Finely crafted components built with React, Tailwind and Wickedblocks UI
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Get Started
+      link: /getting-started/installation/
+      variant: primary
+    - text: View Components
+      link: /components/
+      variant: secondary
 ---
 
 import { Card, CardGrid, LinkButton } from "@astrojs/starlight/components";
-
-<section class="py-32">
-  <div class="container text-center">
-    <div class="mx-auto flex max-w-screen-lg flex-col gap-6">
-      <h1 class="text-3xl font-extrabold lg:text-6xl">
-        A Collection of Components Built With Wickedblocks &amp; Tailwind
-      </h1>
-      <p class="text-balance text-zinc-600 lg:text-lg">
-        Finely crafted components built with React, Tailwind and Wickedblocks UI. Developers can copy and
-        paste these blocks directly into their project.
-      </p>
-    </div>
-    <LinkButton
-    href="/getting-started/installation/"
-      class="font-medium bg-green-800 text-white hover:bg-green-900 h-12 rounded-md px-8 mt-10">
-      Getting Started
-    </LinkButton>
-    <LinkButton
-    href="/guides/example/"
-    variant="minimal"
-      class="h-12 rounded-md px-8 mt-10">
-      Discover all components
-    </LinkButton>
-    <div class="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row">
-      <span class="mx-4 inline-flex items-center -space-x-4"><span
-          class="relative flex shrink-0 overflow-hidden rounded-full size-14 border"></span><span
-          class="relative flex shrink-0 overflow-hidden rounded-full size-14 border"></span><span
-          class="relative flex shrink-0 overflow-hidden rounded-full size-14 border"></span><span
-          class="relative flex shrink-0 overflow-hidden rounded-full size-14 border"></span><span
-          class="relative flex shrink-0 overflow-hidden rounded-full size-14 border"></span></span>
-      <div>
-        <div class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-star size-5 fill-yellow-400 text-yellow-400">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-star size-5 fill-yellow-400 text-yellow-400">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-star size-5 fill-yellow-400 text-yellow-400">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-star size-5 fill-yellow-400 text-yellow-400">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-star size-5 fill-yellow-400 text-yellow-400">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg>
-          <span class="font-semibold">5.0</span>
-        </div>
-        <p class="text-left font-medium text-zinc-600">from 200+ reviews</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section
-  class="relative py-32 before:absolute before:inset-0 before:bg-zinc-900/10 before:[mask-image:url(/images/placeholders/minima/waves.svg)] before:[mask-repeat:repeat] before:[mask-size:_64px_32px]">
-  <div
-    class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent to-background">
-  </div>
-  <div class="container relative">
-    <h2 class="mb-8 max-w-screen-sm text-balance text-2xl font-semibold lg:text-4xl">
-      Build your own website with our UI blocks
-    </h2>
-    <div class="z-30 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="flex flex-col gap-10 rounded-lg border bg-white p-8">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-zoom-in size-6">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-            <line x1="11" x2="11" y1="8" y2="14"></line>
-            <line x1="8" x2="14" y1="11" y2="11"></line>
-          </svg>
-          <h3 class="mb-2 mt-6 font-medium">Quality</h3>
-          <p class="text-sm text-zinc-600">
-            Our UI blocks are designed with quality in mind. We make sure that every block is pixel
-            perfect and visually appealing.
-          </p>
-        </div>
-        <a href="#" class="flex items-center gap-2 text-sm font-medium">
-          <span>Learn more</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-chevron-right w-4">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-          </a>
-      </div>
-      <div class="flex flex-col gap-10 rounded-lg border bg-white p-8">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-blocks size-6">
-            <rect width="7" height="7" x="14" y="3" rx="1"></rect>
-            <path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3">
-            </path>
-          </svg>
-          <h3 class="mb-2 mt-6 font-medium">Customizable</h3>
-          <p class="text-sm text-zinc-600">
-            You can easily customize our UI blocks to fit your needs. Change colors, fonts, and more
-            with our easy-to-use interface.
-          </p>
-        </div>
-        <a href="#" class="flex items-center gap-2 text-sm font-medium">
-          Learn more
-          <svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-chevron-right w-4">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-          </a>
-      </div>
-      <div class="flex flex-col gap-10 rounded-lg border bg-white p-8">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-laptop size-6">
-            <path
-              d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16">
-            </path>
-          </svg>
-          <h3 class="mb-2 mt-6 font-medium">Responsive</h3>
-          <p class="text-sm text-zinc-600">
-            Our UI blocks are fully responsive and look great on any device. No matter the screen
-            size, your website will look amazing.
-          </p>
-        </div>
-        <a href="#" class="flex items-center gap-2 text-sm font-medium">
-          Learn more
-          <svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-chevron-right w-4">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="flex flex-col gap-10 rounded-lg border bg-white p-8">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-list-end size-6">
-            <path d="M16 12H3"></path>
-            <path d="M16 6H3"></path>
-            <path d="M10 18H3"></path>
-            <path d="M21 6v10a2 2 0 0 1-2 2h-5"></path>
-            <path d="m16 16-2 2 2 2"></path>
-          </svg>
-          <h3 class="mb-2 mt-6 font-medium">Easy to Use</h3>
-          <p class="text-sm text-zinc-600">
-            Our UI blocks are easy to use and require no coding knowledge. Simply drag and drop the
-            blocks you want and you are good to go.
-          </p>
-        </div>
-        <a href="#" class="flex items-center gap-2 text-sm font-medium">
-        Learn more
-        <svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-chevron-right w-4">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-          </a>
-      </div>
-      <div class="flex flex-col gap-10 rounded-lg border bg-white p-8">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-zap size-6">
-            <path
-              d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
-            </path>
-          </svg>
-          <h3 class="mb-2 mt-6 font-medium">Fast</h3>
-          <p class="text-sm text-zinc-600">
-            Our UI blocks are optimized for speed and performance. Your website will load fast and
-            provide a great user experience.
-          </p>
-        </div>
-        <a href="#" class="flex items-center gap-2 text-sm font-medium">
-        Learn more
-        <svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-chevron-right w-4">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-          </a>
-      </div>
-      <div class="flex flex-col gap-10 rounded-lg border bg-white p-8">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-infinity size-6">
-            <path
-              d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z">
-            </path>
-          </svg>
-          <h3 class="mb-2 mt-6 font-medium">Modern</h3>
-          <p class="text-sm text-zinc-600">
-            Our UI blocks are designed with modern trends in mind. Your website will look fresh and
-            up-to-date with our blocks.
-          </p>
-        </div>
-        <a href="#" class="flex items-center gap-2 text-sm font-medium">
-        Learn more
-        <svg
-            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-chevron-right w-4">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-          </a>
-      </div>
-    </div>
-  </div>
-</section>
+import Hero from "../../components/Hero.astro";
+import FeatureGrid from "../../components/FeatureGrid.astro";
 
 
-<CardGrid stagger>
-  <Card title="Update content" icon="pencil">
-    Edit `src/content/docs/index.mdx` to see this page change.
+## Popular Components
+
+<CardGrid>
+  <Card title="Button" icon="rocket">
+    Versatile button components with multiple variants, sizes, and states for all your interactive needs.
+    
+    [View Button Component →](/components/button/)
   </Card>
-  <Card title="Add new content" icon="add-document">
-    Add Markdown or MDX files to `src/content/docs` to create new pages.
+  
+  <Card title="Card" icon="document">
+    Flexible card layouts perfect for displaying content, user profiles, product information, and more.
+    
+    [View Card Component →](/components/card/)
   </Card>
-  <Card title="Configure your site" icon="setting">
-    Edit your `sidebar` and other config in `astro.config.mjs`.
+  
+  <Card title="Avatar" icon="user">
+    User avatar components with fallbacks, status indicators, and multiple display options.
+    
+    [View Avatar Component →](/components/avatar/)
   </Card>
-  <Card title="Read the docs" icon="open-book">
-    Learn more in [the Starlight Docs](https://starlight.astro.build/).
+  
+  <Card title="Accordion" icon="list-format">
+    Collapsible content panels perfect for FAQs, feature lists, and organizing information.
+    
+    [View Accordion Component →](/components/accordion/)
   </Card>
 </CardGrid>
+
+## Quick Start
+
+Get up and running with Park UI in minutes:
+
+<CardGrid>
+  <Card title="1. Install" icon="add-document">
+    ```bash
+    npm install park-ui
+    ```
+  </Card>
+  
+  <Card title="2. Import Styles" icon="setting">
+    ```css
+    @import 'park-ui/styles';
+    ```
+  </Card>
+  
+  <Card title="3. Use Components" icon="rocket">
+    ```jsx
+    import { Button } from 'park-ui';
+    
+    <Button variant="primary">
+      Get Started
+    </Button>
+    ```
+  </Card>
+</CardGrid>
+
+---
+
+<section style="text-align: center; padding: 4rem 0; background: var(--sl-color-bg-nav);">
+  <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+    <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--sl-color-white); margin-bottom: 1rem;">
+      Ready to Get Started?
+    </h2>
+    <p style="font-size: 1.25rem; color: var(--sl-color-gray-2); margin-bottom: 2rem;">
+      Join thousands of developers building beautiful interfaces with Park UI
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <LinkButton href="/getting-started/installation/" variant="primary">
+        Start Building
+      </LinkButton>
+      <LinkButton href="/components/button/" variant="secondary">
+        Browse Components
+      </LinkButton>
+    </div>
+  </div>
+</section>

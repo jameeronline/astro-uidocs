@@ -1,0 +1,193 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-highlight">Park UI</span>
+        Design System
+      </h1>
+      <p class="hero-description">
+        A comprehensive collection of components built with Wickedblocks & Tailwind CSS. 
+        Copy and paste beautiful, accessible components directly into your projects.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="/getting-started/installation/" class="hero-btn hero-btn-primary">
+          Get Started
+        </a>
+        <a href="/components/button/" class="hero-btn hero-btn-secondary">
+          View Components
+        </a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Components</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Accessible</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10k+</span>
+          <span class="stat-label">Downloads</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 6rem 0;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--sl-hue-purple), 54%, 12%) 0%,
+      hsl(var(--sl-hue-blue), 54%, 12%) 50%,
+      hsl(var(--sl-hue-purple), 54%, 12%) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--sl-color-white);
+  }
+
+  .hero-highlight {
+    background: linear-gradient(135deg, var(--sl-color-accent), var(--sl-color-accent-high));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--sl-color-gray-2);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+  }
+
+  .hero-btn-primary {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-accent-text);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .hero-btn-primary:hover {
+    background: var(--sl-color-accent-high);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+  }
+
+  .hero-btn-secondary {
+    background: transparent;
+    color: var(--sl-color-white);
+    border: 2px solid var(--sl-color-gray-4);
+  }
+
+  .hero-btn-secondary:hover {
+    background: var(--sl-color-gray-6);
+    border-color: var(--sl-color-accent);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--sl-color-accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 1rem;
+    color: var(--sl-color-gray-3);
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 4rem 0;
+    }
+    
+    .hero-stats {
+      gap: 2rem;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero-btn {
+      width: 200px;
+    }
+  }
+</style>

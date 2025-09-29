@@ -29,7 +29,6 @@
 }
 /* Light mode colors. */
 :root[data-theme="light"] {
-  --sl-font: 'IBM Plex Sans Variable', sans-serif;
   --sl-color-accent-low: #c0e2b8;
   --sl-color-accent: #237b00;
   --sl-color-accent-high: #0d3e00;
@@ -42,7 +41,6 @@
   --sl-color-gray-6: #eaf0e8;
   --sl-color-gray-7: #f4f7f3;
   --sl-color-black: #ffffff;
-   /* --sl-content-width: 58rem; */
 }
 
 @layer base{
@@ -52,5 +50,11 @@
 
   .example-container {
     @apply p-4 bg-gray-50 dark:bg-gray-800;
+  }
+}
+
+@layer utilities{
+  html:not([data-has-sidebar]){
+    --sl-content-width: 100%;
   }
 }
